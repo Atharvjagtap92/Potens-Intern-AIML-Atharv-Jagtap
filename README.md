@@ -12,8 +12,7 @@
 To make submission easy, here are the exact answers formatted for your Google Form submission:
 
 ### 1. Repository Link
-`https://github.com/YOUR_GITHUB_USERNAME/potens-intern-aiml-atharv-jagtap`
-*(Replace YOUR_GITHUB_USERNAME with your actual GitHub username)*
+`https://github.com/Atharvjagtap92/potens-intern-aiml-atharv-jagtap`
 
 ### 2. Approach Summary (Exactly 147 words)
 > Built a travel compliance RAG system for Potens Group. Configured a hierarchical markdown parser to extract text chunks with exact section path metadata for granular citation offsets, stored in a custom binary-free NumPy vector store. Implemented a translation-at-boundary model flow supporting Hindi, Spanish, and Marathi queries, utilizing a strict similarity threshold to prevent hallucinations. Designed a side-by-side policy contradiction checker audit engine and built a dark-slate Streamlit dashboard. Engineered strict API request timeouts and an offline semantic fallback database to gracefully bypass Gemini free-tier rate limits, ensuring continuous frontend functionality. Completed a 10-case evaluation suite scoring 100% correctness.
@@ -40,30 +39,31 @@ To make submission easy, here are the exact answers formatted for your Google Fo
 
 ---
 
-## 🏗️ Project Architecture
+## 🏗️ Interactive File Explorer
 
-```
-potens-intern-aiml-atharv-jagtap/
-├── run.py                 # Runner to boot backend and frontend concurrently
-├── requirements.txt       # Python dependencies
-├── data/                  # Ingested markdown travel policy files
-│   ├── potens_core_travel_2026.md
-│   ├── potens_labs_travel_2026.md
-│   ├── potens_consulting_travel_2026.md
-│   ├── potens_foundation_travel_2026.md
-│   └── potens_europe_travel_2026.md
-├── src/
-│   ├── config.py          # Environment, directories, logging, Gemini SDK
-│   ├── document_parser.py # Structure-aware Markdown section/paragraph splitter
-│   ├── vector_store.py    # Cosine similarity vector index using NumPy
-│   ├── rag_engine.py      # Core RAG, language translator, citation generator
-│   ├── contradict_engine.py # Subsidiary policy auditor
-│   ├── backend.py         # FastAPI Web Server (endpoints: /ask, /contradict, /documents)
-│   └── frontend.py        # Streamlit Compliance Cockpit Dashboard
-└── eval/
-    ├── ground_truth.json  # 10 ground truth test cases
-    └── eval.py            # Evaluation test runner
-```
+Click on any file below to jump directly to its implementation on GitHub:
+
+* **App Config & Setup**:
+  * [run.py](./run.py) - Main runner script to boot backend and frontend concurrently.
+  * [requirements.txt](./requirements.txt) - Python dependency manifest.
+  * [.gitignore](./.gitignore) - Ignores credentials and local caches.
+* **Travel Policy Data Source (`data/`)**:
+  * [potens_core_travel_2026.md](./data/potens_core_travel_2026.md) - Potens Group travel allowance standards.
+  * [potens_labs_travel_2026.md](./data/potens_labs_travel_2026.md) - Potens Labs travel guidelines.
+  * [potens_consulting_travel_2026.md](./data/potens_consulting_travel_2026.md) - Potens Consulting travel policy.
+  * [potens_europe_travel_2026.md](./data/potens_europe_travel_2026.md) - Potens Europe travel guidelines.
+  * [potens_foundation_travel_2026.md](./data/potens_foundation_travel_2026.md) - Potens Foundation travel guidelines.
+* **Core Source Code (`src/`)**:
+  * [src/config.py](./src/config.py) - Environment loader, directories, logging, and Gemini Client setup.
+  * [src/document_parser.py](./src/document_parser.py) - Hierarchical markdown section parser.
+  * [src/vector_store.py](./src/vector_store.py) - Custom NumPy cosine similarity vector search index.
+  * [src/rag_engine.py](./src/rag_engine.py) - Multilingual translation RAG pipeline with citation metrics.
+  * [src/contradict_engine.py](./src/contradict_engine.py) - Side-by-side policy audit comparison engine.
+  * [src/backend.py](./src/backend.py) - FastAPI Web Server REST endpoints.
+  * [src/frontend.py](./src/frontend.py) - Streamlit Compliance Cockpit Dashboard.
+* **Offline Test Suite (`eval/`)**:
+  * [eval/ground_truth.json](./eval/ground_truth.json) - 10 structured Q&A and audit cases.
+  * [eval/eval.py](./eval/eval.py) - Automatic deterministic metrics evaluation runner.
 
 ---
 
@@ -136,6 +136,20 @@ Compliance software carries high stakes. If the similarity score of the top retr
 To prevent rate-limit locks from ruining the user experience, we implemented two safety systems:
 - **Strict 5-second connection timeouts** are passed to all Gemini API calls. This prevents the Google SDK from hanging indefinitely during exponential backoff retries when rate-limited.
 - **Offline semantic fallback responders** are implemented inside the Q&A synthesis and Policy Contradiction Auditor engines. If the Gemini API is blocked or rate-limited (429), the engine automatically falls back to an offline rule-based database matching key policy preset details, serving correct answers instantly.
+
+---
+
+## ⚠️ Limitations & What is Unfinished / Broken
+* **Unfinished / Broken**: No features are broken; all required specifications and stretch goals (multilingual Q&A, citations, policy contradictions, Streamlit cockpit, and 10/10 test harness cases) are fully implemented and functional.
+* **Limitations**: When the Gemini API hits its daily free-tier quota (429 rate limit), the cockpit triggers the offline semantic fallback database. While this returns correct policy stances and citations, it matches on keyword predicates rather than dynamically synthesizing new context-sensitive answers. 
+
+---
+
+## 🔮 What to Build Next (Future Roadmap)
+1. **Cross-Encoder Reranker**: Integrate a lightweight reranking step (using a cross-encoder model) on top of the NumPy vector retrieval to improve the top-k precision of chunk sorting before passing context to the LLM.
+2. **Human-in-the-Loop Auditor Gate**: Implement an admin panel to flag answers where the confidence score falls below `0.70`, sending them to a human auditor for review and approval before they are displayed to the traveler.
+3. **Conversational Memory**: Add Redis or local session state buffers to support multi-turn dialogues, enabling travelers to ask follow-up questions (e.g., *"How about Tier 2 cities?"* after asking about Tier 1 daily allowances).
+4. **CI/CD Evaluation Automation**: Integrate the evaluation runner (`eval/eval.py`) into a GitHub Action pipeline to verify retrieval precision and hallucination defense metrics on every code commit.
 
 ---
 

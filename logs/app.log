@@ -3318,3 +3318,65 @@ Please retry in 8.817591333s. [links {
 }
 ]. Activating offline comparison responder fallback...
 [2026-07-07 18:06:50,227] INFO [potens_rag:backend.py:145] - API Response: /contradict | Time elapsed: 1.68s
+[2026-07-07 20:02:45,058] INFO [potens_rag:backend.py:62] - Starting up Potens Compliance RAG Backend...
+[2026-07-07 20:02:45,229] INFO [potens_rag:vector_store.py:148] - Loaded vector store with 52 chunks from C:\Users\ATHARV JAGTAP\.gemini\antigravity\scratch\potens-intern-aiml-atharv-jagtap\vector_store.json
+[2026-07-07 20:02:45,235] INFO [potens_rag:backend.py:85] - Compliance Engines initialized successfully.
+[2026-07-07 20:03:02,162] INFO [potens_rag:backend.py:124] - API Request: /ask | Query: 'Does Potens Labs reimburse alcoholic drinks during dinners?' | Filters: None
+[2026-07-07 20:03:02,166] INFO [potens_rag:rag_engine.py:63] - Original query: 'Does Potens Labs reimburse alcoholic drinks during dinners?' | Lang: English | Translated: 'Does Potens Labs reimburse alcoholic drinks during dinners?'
+[2026-07-07 20:03:10,489] INFO [potens_rag:backend.py:130] - API Response: /ask | Time elapsed: 8.32s | Confidence: High
+[2026-07-07 20:05:03,975] INFO [potens_rag:backend.py:139] - API Request: /contradict | Doc A: potens_foundation_travel_2026 | Doc B: potens_core_travel_2026 | Topic: 'Hotel accommodation price caps'
+[2026-07-07 20:05:03,981] INFO [potens_rag:contradict_engine.py:14] - Comparing policies 'potens_foundation_travel_2026' and 'potens_core_travel_2026' on topic: 'Hotel accommodation price caps'
+[2026-07-07 20:05:09,573] WARNING [potens_rag:contradict_engine.py:135] - Error comparing policies: 504 The request timed out. Please try again.. Activating offline comparison responder fallback...
+[2026-07-07 20:05:09,574] INFO [potens_rag:backend.py:145] - API Response: /contradict | Time elapsed: 5.60s
+[2026-07-07 20:05:13,739] INFO [potens_rag:backend.py:139] - API Request: /contradict | Doc A: potens_foundation_travel_2026 | Doc B: potens_core_travel_2026 | Topic: 'Submission deadline for expense claims after return date'
+[2026-07-07 20:05:13,740] INFO [potens_rag:contradict_engine.py:14] - Comparing policies 'potens_foundation_travel_2026' and 'potens_core_travel_2026' on topic: 'Submission deadline for expense claims after return date'
+[2026-07-07 20:05:15,944] WARNING [potens_rag:contradict_engine.py:135] - Error comparing policies: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 44.025565526s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 44
+}
+]. Activating offline comparison responder fallback...
+[2026-07-07 20:05:15,947] INFO [potens_rag:backend.py:145] - API Response: /contradict | Time elapsed: 2.21s
+[2026-07-07 20:05:32,937] INFO [potens_rag:backend.py:139] - API Request: /contradict | Doc A: potens_foundation_travel_2026 | Doc B: potens_core_travel_2026 | Topic: 'Travel flight class restrictions for domestic and international routes'
+[2026-07-07 20:05:32,938] INFO [potens_rag:contradict_engine.py:14] - Comparing policies 'potens_foundation_travel_2026' and 'potens_core_travel_2026' on topic: 'Travel flight class restrictions for domestic and international routes'
+[2026-07-07 20:05:35,234] WARNING [potens_rag:contradict_engine.py:135] - Error comparing policies: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 24.742947193s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 24
+}
+]. Activating offline comparison responder fallback...
+[2026-07-07 20:05:35,236] INFO [potens_rag:backend.py:145] - API Response: /contradict | Time elapsed: 2.30s
