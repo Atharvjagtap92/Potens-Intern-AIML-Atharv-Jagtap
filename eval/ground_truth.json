@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "query": "What is the per diem meal allowance in Mumbai for Potens Labs?",
+    "language": "English",
+    "expected_doc": "potens_labs_travel_2026",
+    "type": "standard",
+    "ground_truth": "The per diem meal allowance for Potens Labs in Tier 1 cities like Mumbai is $75 per day."
+  },
+  {
+    "id": 2,
+    "query": "क्या रात के भोजन में शराब का खर्च कंपनी देती है?",
+    "language": "Hindi",
+    "expected_doc": "potens_labs_travel_2026",
+    "type": "multilingual",
+    "ground_truth": "Potens Labs allows moderate alcohol reimbursement up to $15 per day within the per diem limit if dining with a research collaborator or external partner. However, Potens Core strictly prohibits alcohol reimbursement."
+  },
+  {
+    "id": 3,
+    "query": "Can I book a business class flight for a 5-hour domestic flight under Core policy?",
+    "language": "English",
+    "expected_doc": "potens_core_travel_2026",
+    "type": "standard",
+    "ground_truth": "No. Under the Core policy, all domestic flights must be booked in Economy Class. Business class upgrades are not reimbursable."
+  },
+  {
+    "id": 4,
+    "query": "¿Cuál es el límite de horas de vuelo para clase ejecutiva internacional en Potens Labs?",
+    "language": "Spanish",
+    "expected_doc": "potens_labs_travel_2026",
+    "type": "multilingual",
+    "ground_truth": "In Potens Labs, Business Class is permitted for international flights if the continuous flight duration exceeds 6 hours."
+  },
+  {
+    "id": 5,
+    "query": "What is the policy for buying snacks for office birthday parties?",
+    "language": "English",
+    "expected_doc": "none",
+    "type": "out_of_scope",
+    "ground_truth": "This topic is not covered in the documents. The system must output: 'I am sorry, but the provided documents do not contain information to answer this question.'"
+  },
+  {
+    "id": 6,
+    "query": "What is the capital of France?",
+    "language": "English",
+    "expected_doc": "none",
+    "type": "out_of_scope",
+    "ground_truth": "This is general knowledge and not in the documents. The system must output the standard negative response refusing to answer."
+  },
+  {
+    "id": 7,
+    "query": "How much does Potens Europe reimburse for personal car mileage?",
+    "language": "English",
+    "expected_doc": "potens_europe_travel_2026",
+    "type": "standard",
+    "ground_truth": "Potens Europe reimburses personal vehicle travel at a rate of €0.40 per kilometer."
+  },
+  {
+    "id": 8,
+    "query": "Can I submit my expenses for a consulting project 20 days after traveling?",
+    "language": "English",
+    "expected_doc": "potens_consulting_travel_2026",
+    "type": "standard",
+    "ground_truth": "No. Under the Consulting policy, expense claims must be submitted within 14 days of travel due to client billing cycles."
+  },
+  {
+    "id": 9,
+    "query": "What is the maximum hotel room rate in Geneva for European operations?",
+    "language": "English",
+    "expected_doc": "potens_europe_travel_2026",
+    "type": "standard",
+    "ground_truth": "Geneva is classified as Western Europe (Tier 1), where hotel accommodation is capped at €180 per night (excluding taxes)."
+  },
+  {
+    "id": 10,
+    "query": "Does Potens Foundation allow Premium Economy class flights?",
+    "language": "English",
+    "expected_doc": "potens_foundation_travel_2026",
+    "type": "standard",
+    "ground_truth": "No. The Potens Foundation strictly prohibits Premium Economy and Business Class for all flights. Only Economy class is allowed."
+  }
+]
