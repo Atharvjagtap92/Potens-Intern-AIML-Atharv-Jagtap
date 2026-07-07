@@ -3,21 +3,17 @@
 ### Submitter: Atharv Jagtap
 * **Applied Track**: AI/ML (Artificial Intelligence & Machine Learning)
 * **Chosen Question**: Q1 - Document Q&A with Citations, Contradiction Auditor, and Multilingual Support.
-* **Status**: 100% Complete & Verified (All 10 Evaluation Cases Passing)
+* **Status**: Core requirements completed & Verified (All 10 Evaluation Cases Passing)
 
 ---
-
-## 📋 Quick Submission Pack (Copy & Paste for Google Form)
-
-To make submission easy, here are the exact answers formatted for your Google Form submission:
 
 ### 1. Repository Link
 `https://github.com/Atharvjagtap92/potens-intern-aiml-atharv-jagtap`
 
-### 2. Approach Summary (Exactly 147 words)
+### 2. Approach Summary 
 > Built a travel compliance RAG system for Potens Group. Configured a hierarchical markdown parser to extract text chunks with exact section path metadata for granular citation offsets, stored in a custom binary-free NumPy vector store. Implemented a translation-at-boundary model flow supporting Hindi, Spanish, and Marathi queries, utilizing a strict similarity threshold to prevent hallucinations. Designed a side-by-side policy contradiction checker audit engine and built a dark-slate Streamlit dashboard. Engineered strict API request timeouts and an offline semantic fallback database to gracefully bypass Gemini free-tier rate limits, ensuring continuous frontend functionality. Completed a 10-case evaluation suite scoring 100% correctness.
 
-### 3. AI Use Log (Markdown format)
+### 3. AI Use Log
 ```markdown
 | Tool | Approx. Interaction Count | What it was used for |
 | :--- | :--- | :--- |
