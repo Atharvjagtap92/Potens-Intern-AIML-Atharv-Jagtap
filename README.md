@@ -161,5 +161,3 @@ In compliance with Rule 6, here is the log of AI assistants used during the deve
 | :--- | :--- | :--- |
 | **Antigravity AI coding assistant** (Agentic Gemini) | ~25 turns | Guided development, directory setup, wrote core modules (`vector_store`, `rag_engine`, `contradict_engine`), developed FastAPI backend & Streamlit UI, created evaluation suite, resolved Windows port conflicts, fixed schema validation crashes, added request timeouts, and implemented offline semantic fail-safe fallbacks to handle Gemini rate limits. |
 | **Google AI Studio** | 2 queries | Used to verify prompt formatting and testing API output structures for `models/text-embedding-004`. |
-#   p o t e n s - i n t e r n - a i m l - a t h a r v - j a g t a p  
- 
